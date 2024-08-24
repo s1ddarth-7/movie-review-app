@@ -5,10 +5,7 @@ import com.movie.review.service.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
@@ -28,5 +25,10 @@ public class ReviewController {
         return new ResponseEntity<Review>
                 (reviewService.createReview(payload.get("reviewBody"), payload.get("imdbId")), HttpStatus.CREATED);
         // reviewBody and imdbId should be the exact parameter names passed in the JSON
+    }
+
+    @DeleteMapping ("/delete")
+    public void deleteReview (@RequestBody String reviewId) {
+        reviewService.deleteReview(reviewId);
     }
 }

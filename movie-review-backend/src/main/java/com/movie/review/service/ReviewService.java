@@ -3,6 +3,7 @@ package com.movie.review.service;
 import com.movie.review.entity.Movie;
 import com.movie.review.entity.Review;
 import com.movie.review.repository.ReviewRepository;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -39,5 +40,10 @@ public class ReviewService {
 
         return review;
 
+    }
+
+    public void deleteReview(String reviewId) {
+        reviewRepository.deleteById(new ObjectId(reviewId));
+        System.out.println("Review deleted!");
     }
 }
