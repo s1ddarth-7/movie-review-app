@@ -1,4 +1,4 @@
-The "movies.json" file is the copy of documents of a collection from MongoDB used for this backend
+The "movies.json" file (present in resources) is the copy of documents of a collection from MongoDB used for this backend
 
 Set up mongo DB with the JSON data as follows:
 - open mongo DB
