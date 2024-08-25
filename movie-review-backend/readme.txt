@@ -7,8 +7,11 @@ Set up mongo DB with the JSON data as follows:
 
 Postman APIs to test:
 ----------------------
+GET     - http://localhost:8080/
+GET     - http://localhost:8080/gibberish
 GET     - http://localhost:8080/api/v1/movies
 GET     - http://localhost:8080/api/v1/movies/66c76c2a46665bf78645560f
+GET     - http://localhost:8080/api/v1/movies/gibberish
 GET     - http://localhost:8080/api/v1/movies/imdb/tt6443346
 
 POST    - http://localhost:8080/api/v1/reviews (needs a review input in simple raw JSON)

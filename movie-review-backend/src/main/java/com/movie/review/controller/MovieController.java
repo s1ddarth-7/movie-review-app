@@ -26,8 +26,15 @@ public class MovieController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Optional<Movie>> getMovieWithId(@PathVariable ObjectId id) {
-        return new ResponseEntity<Optional<Movie>>(movieService.getMovieById(id), HttpStatus.OK);
+    public ResponseEntity<Optional<Movie>> getMovieWithId(@PathVariable String id) {
+        /*
+        - the below String to ObjectId conversion is crucial to handle a non-valid /{id} for ObjectId conversion
+        - handles this error: Failed to convert value of type 'java.lang.String' to required type 'org.bson.types.ObjectId'
+        - in case of invalid objectId we generate a dummy objectId, this will not match because of the way objectId is generated
+        - object ID is generated is combo of current timestamp, machine identifier, process identifier and counter
+         */
+        ObjectId objectId = ObjectId.isValid(id) ? new ObjectId(id) : new ObjectId();
+        return new ResponseEntity<Optional<Movie>>(movieService.getMovieById(objectId), HttpStatus.OK);
     }
 
     @GetMapping("/imdb/{imdbId}")

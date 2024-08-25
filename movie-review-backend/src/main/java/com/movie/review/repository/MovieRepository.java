@@ -9,5 +9,10 @@ import java.util.Optional;
 
 @Repository
 public interface MovieRepository extends MongoRepository<Movie, ObjectId> {
-    Optional<Movie> findMovieByImdbId (String imdbId);
+    /*
+    to enable custom search based on specific parameter of entity, we introduce custom method with parameter
+    having the exact same name in the entity class.
+    @Repository is smart enough to understand, so we need not worry defining the abstract method
+     */
+    Optional<Movie> findMovieByImdbId (String imdbId);  // class: Movie, search based on parameter: imdbId
 }

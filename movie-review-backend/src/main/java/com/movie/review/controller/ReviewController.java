@@ -2,6 +2,7 @@ package com.movie.review.controller;
 
 import com.movie.review.entity.Review;
 import com.movie.review.service.ReviewService;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,7 +29,11 @@ public class ReviewController {
     }
 
     @DeleteMapping ("/delete")
-    public void deleteReview (@RequestBody String reviewId) {
+    public ResponseEntity<String> deleteReview (@RequestBody String reviewId) {
+        if (!ObjectId.isValid(reviewId)) {
+            return new ResponseEntity<>("Invalid reviewID, nothing deleted", HttpStatus.CONFLICT);
+        }
         reviewService.deleteReview(reviewId);
+        return new ResponseEntity<>("Review that matches reviewId has been deleted", HttpStatus.OK);
     }
 }

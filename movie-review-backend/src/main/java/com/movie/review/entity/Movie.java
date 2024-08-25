@@ -29,7 +29,7 @@ public class Movie {
     private List<String> genres;
     private List<String> backdrops;
 
-    @DocumentReference
+    @DocumentReference  // helps to link another document to the current document
     private List<Review> reviewIds;
 
 }
