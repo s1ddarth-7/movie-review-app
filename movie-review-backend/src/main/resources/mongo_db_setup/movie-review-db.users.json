@@ -1,0 +1,66 @@
+[{
+  "_id": {
+    "$numberLong": "4"
+  },
+  "email": "bob.builder@example.com",
+  "password": "$2a$10$abcdefg1234567890abcdefg1234567890abcdefg1234567890abcd",
+  "role": "ROLE_ADMIN",
+  "extraInfo": "Some extra information about Bob Builder"
+},
+{
+  "_id": {
+    "$numberLong": "1"
+  },
+  "email": "john.doe@example.com",
+  "password": "$2a$12$gItZAGWJZeLZPKUrXq0JqOaAH4og837GnqAae5Wep//nuM.nZL4ji",
+  "role": "ROLE_ADMIN",
+  "extraInfo": "Some extra information about John Doe"
+},
+{
+  "_id": {
+    "$numberLong": "3"
+  },
+  "email": "alice.wonder@example.com",
+  "password": "$2a$10$abcdefg1234567890abcdefg1234567890abcdefg1234567890abcd",
+  "role": "ROLE_REGULAR",
+  "extraInfo": "Some extra information about Alice Wonder"
+},
+{
+  "_id": {
+    "$numberLong": "2"
+  },
+  "email": "jane.smith@example.com",
+  "password": "$2a$10$abcdefg1234567890abcdefg1234567890abcdefg1234567890abcd",
+  "role": "ROLE_REGULAR",
+  "extraInfo": "Some extra information about Jane Smith"
+},
+{
+  "_id": {
+    "$numberLong": "5"
+  },
+  "email": "abc.def@ghi.com",
+  "password": "$2a$10$RnyiQLk4lLFGS9l70X.Ct.82kGM5jvoT3dQUeGoxR/fAc3De2gCc2",
+  "role": "ROLE_ADMIN",
+  "extraInfo": "Meh.",
+  "_class": "com.movie.review.entity.UserEntity"
+},
+{
+  "_id": {
+    "$numberLong": "6"
+  },
+  "email": "xyz.123@abc.com",
+  "password": "$2a$10$rEAD/FS1j1EXCeCMM2lt9uql/h98ULJD1fGRpM0uHNq3zFcaTjnqW",
+  "role": "ROLE_REGULAR",
+  "extraInfo": "Nothing",
+  "_class": "com.movie.review.entity.UserEntity"
+},
+{
+  "_id": {
+    "$numberLong": "7"
+  },
+  "email": "new_user@mail.com",
+  "password": "$2a$10$ADtC6e26mbKnSD4koxDlPOCBPyPMfIr4sNVFZaWiuv9gyEAdiGf7W",
+  "role": "ROLE_ADMIN",
+  "extraInfo": "new user",
+  "_class": "com.movie.review.entity.UserEntity"
+}]
